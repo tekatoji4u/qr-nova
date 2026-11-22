@@ -1568,8 +1568,8 @@ document.addEventListener('pointerdown',e=>{if(isMobile()&&workspace.classList.c
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&workspace.classList.contains('nova-nav-expanded'))setNav(false)});
 const toggle=$('toggleHistory'),content=$('novaHistoryContent');if(toggle&&content)toggle.addEventListener('click',()=>{const open=content.hidden;content.hidden=!open;toggle.setAttribute('aria-expanded',String(open));toggle.innerHTML=open?'▾ Lịch sử gần đây <span>Ẩn</span>':'▸ Lịch sử gần đây <span>Hiện</span>';});
 const history=$('history');if(history)history.addEventListener('click',e=>{if(e.target.closest('button')&&viet.hidden===false){const b=types.querySelector('button.type.active');showStandard(b?.dataset.type||'url')}});
-// Mở đầu chỉ hiển thị thanh chọn mục đích, chưa hiển thị biểu mẫu.
-editor.hidden=true;preview.hidden=true;viet.hidden=true;workspace.classList.add('nova-no-selection');setNav(true);
+// Mở đầu: sidebar xếp gọn thành thanh icon, chưa hiển thị biểu mẫu.
+editor.hidden=true;preview.hidden=true;viet.hidden=true;workspace.classList.add('nova-no-selection');setNav(false);
 const origStandard=showStandard;types.addEventListener('click',()=>workspace.classList.remove('nova-no-selection'));
 vietBtn.addEventListener('click',()=>workspace.classList.remove('nova-no-selection'));
 })();
